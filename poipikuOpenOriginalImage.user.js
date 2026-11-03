@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         poipikuOpenOriginalImage
-// @namespace    https://github.com/Coxxs/twOpenOriginalImage
+// @namespace    https://github.com/camemb3rt/poipikuOpenOriginalImage/
 // @version      0.1.0
 // @description  Open and download the original images on Poipiku.
 // @author       camemb3rt
