@@ -7,8 +7,8 @@
 // @match        https://poipiku.com/*
 // @grant        GM_xmlhttpRequest
 // @connect      cdn.poipiku.com
-// @downloadURL  https://raw.githubusercontent.com/camemb3rt/poipikuOpenOriginalImage/main/poipikuOpenOriginalImage.user.js
-// @updateURL    https://raw.githubusercontent.com/camemb3rt/poipikuOpenOriginalImage/main/poipikuOpenOriginalImage.user.js
+// @downloadURL  https://github.com/camemb3rt/poipikuOpenOriginalImage/raw/main/poipikuOpenOriginalImage.user.js
+// @updateURL    https://github.com/camemb3rt/poipikuOpenOriginalImage/raw/main/poipikuOpenOriginalImage.user.js
 // @run-at       document-start
 // @license      MIT
 // ==/UserScript==
