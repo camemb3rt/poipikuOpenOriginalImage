@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         poipikuOpenOriginalImage
 // @namespace    https://github.com/camemb3rt/poipikuOpenOriginalImage/
-// @version      0.1.0
+// @version      0.1.1
 // @description  Open and download the original images on Poipiku.
 // @author       camemb3rt
 // @match        https://poipiku.com/*
 // @grant        GM_xmlhttpRequest
 // @connect      cdn.poipiku.com
-// @downloadURL  https://github.com/camemb3rt/poipikuOpenOriginalImage/raw/main/poipikuOpenOriginalImage.user.js
-// @updateURL    https://github.com/camemb3rt/poipikuOpenOriginalImage/raw/main/poipikuOpenOriginalImage.user.js
+// @downloadURL  https://raw.githubusercontent.com/camemb3rt/poipikuOpenOriginalImage/main/poipikuOpenOriginalImage.user.js
+// @updateURL    https://raw.githubusercontent.com/camemb3rt/poipikuOpenOriginalImage/main/poipikuOpenOriginalImage.user.js
 // @run-at       document-start
 // @license      MIT
 // ==/UserScript==
@@ -163,7 +163,8 @@
         const body = new URLSearchParams({ ID: match[1], TD: match[2], AD: match[3], PAS: password });
         const response = await fetch('/f/ShowIllustDetailF.jsp', { method: 'POST', body, credentials: 'same-origin' });
         const data = await response.json();
-        const artist = (item?.querySelector('.IllustItemUserName')?.textContent || 'artist').trim().replace(/[\\/:*?"<>|]/g, '_');
+        const profile = document.querySelector('.UserInfoProfile a[href*="twitter.com/"], .UserInfoProfile a[href*="x.com/"]');
+        const artist = (profile ? new URL(profile.href).pathname.split('/').filter(Boolean)[0] : item?.querySelector('.IllustItemUserName')?.textContent || 'artist').trim().replace(/[\\/:*?"<>|]/g, '_');
         return data.result === 1 && open(imageUrls(data.html), { artist, userId: match[1], postId: match[2] });
     }
 
